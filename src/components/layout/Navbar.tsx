@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import MagneticButton from "@/components/ui/MagneticButton";
 import { FiHome, FiMapPin, FiTag, FiPhone } from "react-icons/fi";
@@ -22,9 +23,9 @@ const Navbar = ({ onCTA }: NavbarProps) => {
   }, []);
 
   const navLinks = [
-    { name: "Overview", href: "#overview", icon: <FiHome /> },
-    { name: "Location", href: "#location", icon: <FiMapPin /> },
-    { name: "Pricing", href: "#pricing", icon: <FiTag /> },
+    { name: "Overview", href: "/#overview", icon: <FiHome /> },
+    { name: "Location", href: "/#location", icon: <FiMapPin /> },
+    { name: "Pricing", href: "/#pricing", icon: <FiTag /> },
   ];
 
   return (
@@ -38,8 +39,8 @@ const Navbar = ({ onCTA }: NavbarProps) => {
         }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
-          {/* Aligned with SalesGear Realty branding for Ads Safety */}
-          <div className="flex items-center gap-4">
+          {/* Logo redirects to #hero */}
+          <Link href="/#hero" className="flex items-center gap-4">
             <div className="text-white font-serif text-xl md:text-2xl tracking-tighter cursor-pointer flex flex-col leading-none">
               <span className="text-[9px] uppercase tracking-[0.5em] text-[#C5A059] mb-1 font-bold">
                 Siddhi Vinayak
@@ -49,7 +50,7 @@ const Navbar = ({ onCTA }: NavbarProps) => {
                 Authorised Developer
               </span>
             </div>
-          </div>
+          </Link>
 
           <div className="hidden md:flex items-center gap-10">
             {/* Click-to-Call: Critical Trust Signal for Google Bot */}
@@ -66,13 +67,13 @@ const Navbar = ({ onCTA }: NavbarProps) => {
             <div className="h-4 w-px bg-white/10" />
 
             {navLinks.map((link) => (
-              <a 
+              <Link 
                 key={link.name} 
                 href={link.href} 
                 className="text-white/60 hover:text-[#C5A059] text-[10px] uppercase tracking-[0.3em] font-medium transition-colors duration-300"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
             
             <MagneticButton onClick={onCTA}>
@@ -88,14 +89,14 @@ const Navbar = ({ onCTA }: NavbarProps) => {
       <div className="md:hidden fixed bottom-0 left-0 w-full z-[100] px-4 pb-6 pt-2 bg-gradient-to-t from-black via-black/80 to-transparent">
         <div className="bg-[#111]/90 backdrop-blur-2xl border border-white/10 rounded-2xl flex items-center justify-around py-3 px-2 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
           {navLinks.map((link) => (
-            <a 
+            <Link 
               key={link.name} 
               href={link.href} 
               className="flex flex-col items-center gap-1.5 text-white/40 hover:text-[#C5A059] transition-colors"
             >
               <span className="text-lg">{link.icon}</span>
               <span className="text-[8px] uppercase tracking-[0.2em] font-bold">{link.name}</span>
-            </a>
+            </Link>
           ))}
           
           <button 
