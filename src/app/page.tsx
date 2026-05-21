@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import Exclusivity from "@/components/sections/Exclusivity";
 import Gallery from "@/components/sections/Gallery";
@@ -9,10 +8,8 @@ import Location from "@/components/sections/Location";
 import Pricing from "@/components/sections/Pricing";
 import Urgency from "@/components/sections/Urgency";
 import FinalCTA from "@/components/sections/FinalCTA";
-import Footer from "@/components/layout/Footer";
 import ModalForm from "@/components/ui/ModalForm";
 import CursorGlow from "@/components/ui/CursorGlow";
-import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 
 export default function LandingPage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,9 +21,6 @@ export default function LandingPage() {
     <main className="relative w-full bg-black scroll-smooth selection:bg-[#C5A059] selection:text-black">
       {/* Global Luxury Enhancements */}
       <CursorGlow />
-
-      {/* Navigation */}
-      <Navbar onCTA={openModal} />
 
       {/* Hero Section - The First Impression */}
       <section id="hero">
@@ -59,11 +53,6 @@ export default function LandingPage() {
       <section id="contact">
         <FinalCTA onCTA={openModal} />
       </section>
-
-      {/* Closure */}
-      <Footer />
-
-      <WhatsAppFloat />
 
       {/* Global Lead Capture Overlay */}
       <ModalForm isOpen={isOpen} onClose={closeModal} />
