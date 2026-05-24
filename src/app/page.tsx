@@ -39,7 +39,7 @@ export default function LandingPage() {
 
       {/* Logical & Convenience Proof */}
       <section id="location">
-        <Location />
+        <Location onCTA={openModal} />
       </section>
 
       {/* Value & Investment Anchoring */}

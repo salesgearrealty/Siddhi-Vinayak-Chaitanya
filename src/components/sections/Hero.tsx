@@ -36,7 +36,6 @@ const Hero = ({ onCTA }: HeroProps) => {
       </motion.div>
 
       <div className="relative z-20 container mx-auto px-6 flex flex-col items-center text-center">
-        {/* Compliance Tag: Establishes Location & Identity */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -44,7 +43,7 @@ const Hero = ({ onCTA }: HeroProps) => {
           className="mb-6 flex items-center gap-2"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
-          <span className="text-[10px] uppercase tracking-[0.4em] text-[#C5A059] font-bold">
+          <span className="text-[10px] md:text-[11px] uppercase tracking-[0.4em] text-[#C5A059] font-black">
             Boutique Residences • NIBM, Pune
           </span>
         </motion.div>
@@ -53,7 +52,7 @@ const Hero = ({ onCTA }: HeroProps) => {
           initial={{ opacity: 0, y: 30 }} 
           animate={{ opacity: 1, y: 0 }} 
           transition={{ ...transition, delay: 0.2 }} 
-          className="font-serif text-5xl md:text-8xl text-white mb-8 tracking-tight"
+          className="font-serif text-5xl md:text-8xl text-white mb-8 tracking-tight font-medium"
         >
           The Rarity of Five.
         </motion.h1>
@@ -71,37 +70,24 @@ const Hero = ({ onCTA }: HeroProps) => {
           initial={{ opacity: 0, y: 20 }} 
           animate={{ opacity: 1, y: 0 }} 
           transition={{ ...transition, delay: 0.6 }}
-          className="flex flex-col items-center gap-8"
+          className="flex flex-col md:flex-row items-center gap-6"
         >
           <MagneticButton onClick={onCTA}>
-            <span className="px-12 py-5 bg-[#C5A059] text-black font-bold tracking-[0.2em] uppercase text-[10px] transition-all hover:bg-white rounded-full inline-block">
+            <button className="px-12 py-5 bg-[#C5A059] text-black font-black tracking-[0.2em] uppercase text-[11px] transition-all duration-500 hover:bg-white hover:scale-105 rounded-full shadow-[0_15px_30px_rgba(197,160,89,0.2)]">
               Request an Invitation
-            </span>
+            </button>
           </MagneticButton>
 
-          {/* Mandatory for Ads: High-intent conversion trigger */}
-          <a 
-            href="/Brochure.pdf" 
-            target="_blank"
-            className="flex items-center gap-2 text-white/40 hover:text-[#C5A059] transition-colors group"
-          >
-            <FiDownload size={14} className="group-hover:translate-y-0.5 transition-transform" />
-            <span className="text-[9px] uppercase tracking-[0.3em] font-bold border-b border-white/10 pb-1">
-              Official Brochure
-            </span>
-          </a>
+          <MagneticButton onClick={onCTA}>
+            <button className="flex items-center gap-3 px-10 py-5 border border-white/20 text-white hover:border-[#C5A059] hover:text-[#C5A059] transition-all duration-500 rounded-full group">
+              <FiDownload size={16} className="group-hover:-translate-y-1 transition-transform duration-300" />
+              <span className="text-[11px] uppercase tracking-[0.25em] font-bold">
+                Download Brochure
+              </span>
+            </button>
+          </MagneticButton>
         </motion.div>
       </div>
-      
-      <motion.div 
-        initial={{ opacity: 0 }} 
-        animate={{ opacity: 1 }} 
-        transition={{ delay: 1, duration: 1 }} 
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        <span className="text-[10px] uppercase tracking-[0.3em] text-white/40">Scroll to Explore</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-white/40 to-transparent" />
-      </motion.div>
     </section>
   );
 };
