@@ -35,6 +35,7 @@ const Gallery = () => {
     controls.start({
       x: [startX, -totalWidth],
       transition: {
+        autoDraw: false,
         ease: "linear",
         duration: remainingTime,
         repeat: Infinity,
@@ -74,11 +75,11 @@ const Gallery = () => {
   };
 
   return (
-    <section className="w-full py-24 bg-[#0A0A0A] overflow-hidden">
-      <div className="container mx-auto px-6 mb-16">
+    <section className="w-full py-16 md:py-24 bg-[#0A0A0A] overflow-hidden">
+      <div className="container mx-auto px-6 mb-10 md:mb-16">
         <div className="max-w-2xl">
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">A Glimpse Into Your Future.</h2>
-          <p className="text-white/50 font-light text-lg">Every detail designed to reflect Elegance, Class, and Peace.</p>
+          <h2 className="font-serif text-3xl md:text-5xl text-white mb-4 md:mb-6">A Glimpse Into Your Future.</h2>
+          <p className="text-white/50 font-light text-sm md:text-lg">Every detail designed to reflect Elegance, Class, and Peace.</p>
         </div>
       </div>
 
@@ -100,10 +101,7 @@ const Gallery = () => {
               key={idx} 
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              /* w-[44vw] means slightly less than 2 images fit perfectly inside 100vw mobile view viewport 
-                h-[260px] scales down mobile aspect height beautifully so cards aren't overly stretched
-              */
-              className="relative w-[44vw] sm:w-[280px] md:w-[440px] h-[260px] sm:h-[380px] md:h-[550px] overflow-hidden rounded-sm cursor-pointer flex-shrink-0 group"
+              className="relative w-[50vw] sm:w-[280px] md:w-[440px] h-[280px] sm:h-[380px] md:h-[550px] overflow-hidden rounded-sm cursor-pointer flex-shrink-0 group"
             >
               {/* Image Frame Setup */}
               <div className="relative w-full h-full">
@@ -113,7 +111,7 @@ const Gallery = () => {
                   fill 
                   priority={idx < 4} 
                   quality={90}
-                  sizes="(max-width: 768px) 45vw, 440px"
+                  sizes="(max-width: 768px) 50vw, 440px"
                   className="object-cover transition-transform duration-700 ease-[0.16, 1, 0.3, 1] group-hover:scale-105" 
                 />
               </div>
@@ -121,12 +119,13 @@ const Gallery = () => {
               {/* High Contrast Overlay */}
               <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
               
-              {/* Content Label Badge - Scaled padding & typography down cleanly for mobile views */}
-              <div className="absolute bottom-3 left-3 right-3 md:bottom-6 md:left-6 md:right-6 p-3 md:p-5 z-20 bg-black/50 border border-white/5 rounded-md backdrop-blur-sm transition-colors duration-300 group-hover:border-[#C5A059]/30">
-                <p className="text-[#C5A059] text-[8px] md:text-[10px] uppercase tracking-widest mb-1 font-black">
+              {/* Content Label Badge - Explicit Mobile Wrapping Updates */}
+              <div className="absolute bottom-2.5 left-2.5 right-2.5 md:bottom-6 md:left-6 md:right-6 p-2.5 md:p-5 z-20 bg-black/60 border border-white/5 rounded-md backdrop-blur-sm transition-colors duration-300 group-hover:border-[#C5A059]/30">
+                <p className="text-[#C5A059] text-[7px] md:text-[10px] uppercase tracking-widest mb-0.5 md:mb-1 font-black">
                   {img.category}
                 </p>
-                <h3 className="text-white text-xs md:text-lg font-serif font-medium tracking-wide line-clamp-1">
+                {/* Removed line-clamp-1, downscaled font to text-[11px] on small layouts, and forced break-words layout structure */}
+                <h3 className="text-white text-[11px] sm:text-sm md:text-lg font-serif font-medium tracking-wide leading-tight whitespace-normal break-words">
                   {img.title}
                 </h3>
               </div>
