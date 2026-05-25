@@ -36,15 +36,34 @@ const Hero = ({ onCTA }: HeroProps) => {
       </motion.div>
 
       <div className="relative z-20 container mx-auto px-6 flex flex-col items-center text-center">
+        
+        {/* Core Location Header */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="mb-6 flex items-center gap-2"
+          transition={{ delay: 0.6 }}
+          className="mb-4 flex items-center gap-2"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
           <span className="text-[10px] md:text-[11px] uppercase tracking-[0.4em] text-[#C5A059] font-black">
             Boutique Residences • NIBM, Pune
+          </span>
+        </motion.div>
+
+        {/* High-Impact Feature Perk: Ready Possession */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ ...transition, delay: 0.8 }}
+          className="mb-8 relative flex items-center gap-3 bg-gradient-to-r from-[#C5A059]/20 via-[#C5A059]/5 to-[#C5A059]/20 border border-[#C5A059] px-6 py-2.5 rounded-full shadow-[0_0_30px_rgba(197,160,89,0.15)] backdrop-blur-sm"
+        >
+          {/* Radiating Luxury Status Pulse */}
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C5A059] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#C5A059]"></span>
+          </span>
+          <span className="text-white text-[11px] md:text-xs font-black uppercase tracking-[0.3em] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+            Exclusive Perk: Ready Possession
           </span>
         </motion.div>
 

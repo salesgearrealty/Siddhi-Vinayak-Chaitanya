@@ -10,6 +10,7 @@ import Urgency from "@/components/sections/Urgency";
 import FinalCTA from "@/components/sections/FinalCTA";
 import ModalForm from "@/components/ui/ModalForm";
 import CursorGlow from "@/components/ui/CursorGlow";
+import Specifications from "@/components/sections/Specifications";
 
 export default function LandingPage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,10 +33,15 @@ export default function LandingPage() {
         <Exclusivity />
       </section>
 
+      <Specifications />
+
+
       {/* Visual Experience */}
       <section id="gallery">
         <Gallery />
       </section>
+
+
 
       {/* Logical & Convenience Proof */}
       <section id="location">

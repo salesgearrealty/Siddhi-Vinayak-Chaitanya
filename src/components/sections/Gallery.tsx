@@ -9,8 +9,10 @@ const images = [
   { src: "/assets/Gallery/palatial.avif", title: "Palatial Living", category: "Interiors" },
   { src: "/assets/Gallery/Facade.avif", title: "The Facade", category: "Architecture" },
   { src: "/assets/Gallery/Master.avif", title: "Sun-Drenched Master", category: "Sanctuary" },
+  { src: "/assets/Gallery/roof-top.avif", title: "Roof Top Amenities", category: "Amenities" },
   { src: "/assets/Gallery/Kitchen.avif", title: "Gourmet Kitchen", category: "Culinary" },
   { src: "/assets/Gallery/Golden_Hour.avif", title: "Golden Hour Exterior", category: "Atmosphere" },
+  { src: "/assets/Gallery/parking.avif", title: "2 Reserved Car Parking", category: "Amenities" },
 ];
 
 const duplicatedImages = [...images, ...images];
