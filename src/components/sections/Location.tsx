@@ -38,16 +38,13 @@ const Location = ({ onCTA }: LocationProps) => {
             variants={containerVariants} 
             className="w-full lg:w-5/12"
           >
-            <motion.span variants={itemVariants} className="text-[#C5A059] uppercase tracking-[0.4em] text-xs md:text-sm mb-6 block font-black">
-              NIBM Annexe, Pune
-            </motion.span>
             
             <motion.h2 variants={itemVariants} className="font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-8 leading-[1.1] tracking-tight font-medium">
-              A Legacy Address. <br />Connected to Everything.
+              A Legacy Address <br />Connected to Everything
             </motion.h2>
             
             <motion.p variants={itemVariants} className="text-white/77 text-lg md:text-xl font-normal leading-relaxed mb-12">
-              Perched on the highest point of NIBM Annexe, this sanctuary offers a rare equilibrium—surrounded by protected forest greens yet minutes away from Pune’s elite social infrastructure.
+              Perched on the highest point of NIBM Annexe, this sanctuary offers a rare equilibrium—surrounded by protected forest greens yet minutes away from Pune’s elite social infrastructure
             </motion.p>
 
             <div className="space-y-10">
@@ -63,16 +60,6 @@ const Location = ({ onCTA }: LocationProps) => {
                 </motion.div>
               ))}
             </div>
-
-            {/* Changed from <a> tag link to direct action onClick trigger running the shared verification component workflow */}
-            <motion.div variants={itemVariants} className="mt-16">
-              <button 
-                onClick={onCTA}
-                className="inline-flex items-center gap-4 px-10 py-5 border border-white/20 rounded-full text-white text-xs uppercase tracking-[0.3em] font-black hover:text-[#C5A059] hover:border-[#C5A059] transition-all duration-500 group"
-              >
-                Download Brochure <FiArrowRight className="group-hover:translate-x-2 transition-transform text-base" />
-              </button>
-            </motion.div>
           </motion.div>
 
           {/* Map Column */}
@@ -93,8 +80,11 @@ const Location = ({ onCTA }: LocationProps) => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center pointer-events-none">
               <div className="w-6 h-6 bg-[#C5A059] rounded-full animate-ping absolute opacity-75" />
               <div className="w-5 h-5 bg-[#C5A059] rounded-full relative shadow-[0_0_25px_rgba(197,160,89,1)] border-2 border-white" />
-              <div className="mt-4 px-5 py-2.5 bg-black text-white text-xs tracking-[0.25em] uppercase font-black border-2 border-[#C5A059] shadow-xl text-center whitespace-nowrap">
-                Siddhi Vinayak Chaitanya
+              
+              {/* Updated Label Section */}
+              <div className="mt-3 px-3 py-1.5 bg-black text-white text-[9px] tracking-[0.2em] uppercase font-bold border border-[#C5A059] shadow-xl text-center leading-tight">
+                SiddhiVinayak<br/>
+                Chaitanya
               </div>
             </div>
           </motion.div>

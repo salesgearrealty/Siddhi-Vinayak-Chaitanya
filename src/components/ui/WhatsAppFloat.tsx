@@ -5,7 +5,7 @@ import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 
 const ContactFloats = () => {
   const phoneNumber = "919000000000"; 
-  const message = encodeURIComponent("I’m interested in the luxury residences at Siddhi Vinayak Chaitanya. Please share details.");
+  const message = encodeURIComponent("I’m interested in the luxury residences at SiddhiVinayak Chaitanya. Please share details.");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
   const callUrl = `tel:${phoneNumber}`;
 

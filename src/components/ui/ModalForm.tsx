@@ -7,6 +7,8 @@ import MagneticButton from "@/components/ui/MagneticButton";
 interface ModalFormProps {
   isOpen: boolean;
   onClose: () => void;
+  title: string;        // Added
+  buttonText: string;   // Added
 }
 
 const overlayVariants: Variants = {
@@ -24,7 +26,7 @@ const itemVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } }
 };
 
-const ModalForm = ({ isOpen, onClose }: ModalFormProps) => {
+const ModalForm = ({ isOpen, onClose, title, buttonText }: ModalFormProps) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -39,7 +41,9 @@ const ModalForm = ({ isOpen, onClose }: ModalFormProps) => {
             </button>
 
             <div className="relative text-center mb-10">
-              <motion.h2 variants={itemVariants} className="font-serif text-3xl md:text-4xl text-white mb-4">Request Your Private Invitation</motion.h2>
+              <motion.h2 variants={itemVariants} className="font-serif text-3xl md:text-4xl text-white mb-4">
+                {title}
+              </motion.h2>
               <motion.p variants={itemVariants} className="text-white/50 text-sm font-light">Enter your details to receive exclusive access.</motion.p>
             </div>
 
@@ -59,7 +63,7 @@ const ModalForm = ({ isOpen, onClose }: ModalFormProps) => {
               <motion.div variants={itemVariants} className="pt-4 flex justify-center">
                 <MagneticButton>
                   <button type="submit" className="px-14 py-5 bg-[#C5A059] text-black font-semibold tracking-[0.2em] uppercase text-[10px] rounded-full transition-all duration-500 hover:bg-white hover:scale-105">
-                    Request Invitation
+                    {buttonText}
                   </button>
                 </MagneticButton>
               </motion.div>

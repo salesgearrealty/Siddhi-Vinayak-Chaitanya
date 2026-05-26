@@ -39,12 +39,31 @@ const Urgency = ({ onCTA }: UrgencyProps) => {
 
         <motion.div variants={itemVariants} className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mb-20">
           <div className="text-center">
-            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1, duration: 1 }} className="block text-[#C5A059] text-5xl font-serif mb-2">03</motion.span>
+            <motion.span 
+              initial={{ opacity: 0 }} 
+              whileInView={{ opacity: 1 }} 
+              transition={{ delay: 1, duration: 1 }} 
+              className="block text-[#C5A059] text-5xl font-serif mb-2"
+            >
+              03
+            </motion.span>
             <span className="text-white/30 text-[10px] uppercase tracking-[0.2em]">Residences Reserved</span>
           </div>
+          
           <div className="hidden md:block w-px h-12 bg-white/10" />
+          
           <div className="text-center">
-            <span className="block text-white text-5xl font-serif mb-2">02</span>
+            <motion.span 
+              className="block text-white text-5xl font-serif mb-2"
+              animate={{ opacity: [1, 0, 1] }}
+              transition={{ 
+                duration: 1.5, 
+                repeat: Infinity, 
+                ease: "easeInOut" 
+              }}
+            >
+              02
+            </motion.span>
             <span className="text-white/30 text-[10px] uppercase tracking-[0.2em]">Final Invitations Left</span>
           </div>
         </motion.div>

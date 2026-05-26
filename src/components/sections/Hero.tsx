@@ -2,7 +2,6 @@
 
 import { motion, Transition } from "framer-motion";
 import MagneticButton from "@/components/ui/MagneticButton";
-import { FiDownload } from "react-icons/fi";
 
 interface HeroProps {
   onCTA: () => void;
@@ -29,7 +28,7 @@ const Hero = ({ onCTA }: HeroProps) => {
           <source media="(max-width: 768px)" srcSet="/assets/m-hero.avif" />
           <img 
             src="/assets/d-hero.avif" 
-            alt="Siddhi Vinayak Chaitanya - NIBM Pune" 
+            alt="SiddhiVinayak Chaitanya - NIBM Pune" 
             className="w-full h-full object-cover" 
           />
         </picture>
@@ -37,33 +36,19 @@ const Hero = ({ onCTA }: HeroProps) => {
 
       <div className="relative z-20 container mx-auto px-6 flex flex-col items-center text-center">
         
-        {/* Core Location Header */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="mb-4 flex items-center gap-2"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
-          <span className="text-[10px] md:text-[11px] uppercase tracking-[0.4em] text-[#C5A059] font-black">
-            Boutique Residences • NIBM, Pune
-          </span>
-        </motion.div>
-
-        {/* High-Impact Feature Perk: Ready Possession */}
+        {/* Ready Possession Tag */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ ...transition, delay: 0.8 }}
-          className="mb-8 relative flex items-center gap-3 bg-gradient-to-r from-[#C5A059]/20 via-[#C5A059]/5 to-[#C5A059]/20 border border-[#C5A059] px-6 py-2.5 rounded-full shadow-[0_0_30px_rgba(197,160,89,0.15)] backdrop-blur-sm"
+          className="mb-8 relative flex items-center gap-3 bg-linear-to-r from-[#C5A059]/20 via-[#C5A059]/5 to-[#C5A059]/20 border border-[#C5A059] px-6 py-2.5 rounded-full shadow-[0_0_30px_rgba(197,160,89,0.15)] backdrop-blur-sm"
         >
-          {/* Radiating Luxury Status Pulse */}
           <span className="relative flex h-2.5 w-2.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C5A059] opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#C5A059]"></span>
           </span>
           <span className="text-white text-[11px] md:text-xs font-black uppercase tracking-[0.3em] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-            Exclusive Perk: Ready Possession
+            Exclusive Perk Ready Possession
           </span>
         </motion.div>
 
@@ -73,7 +58,7 @@ const Hero = ({ onCTA }: HeroProps) => {
           transition={{ ...transition, delay: 0.2 }} 
           className="font-serif text-5xl md:text-8xl text-white mb-8 tracking-tight font-medium"
         >
-          The Rarity of Five.
+          The Rarity of Five
         </motion.h1>
 
         <motion.p 
@@ -82,7 +67,7 @@ const Hero = ({ onCTA }: HeroProps) => {
           transition={{ ...transition, delay: 0.4 }} 
           className="max-w-2xl text-lg md:text-xl text-white/80 font-light leading-relaxed mb-12"
         >
-          A private sanctuary in the heart of NIBM. Designed for those who have nothing left to prove.
+          A private sanctuary in the heart of NIBM Designed for those who have nothing left to prove
         </motion.p>
 
         <motion.div 
@@ -94,15 +79,6 @@ const Hero = ({ onCTA }: HeroProps) => {
           <MagneticButton onClick={onCTA}>
             <button className="px-12 py-5 bg-[#C5A059] text-black font-black tracking-[0.2em] uppercase text-[11px] transition-all duration-500 hover:bg-white hover:scale-105 rounded-full shadow-[0_15px_30px_rgba(197,160,89,0.2)]">
               Request an Invitation
-            </button>
-          </MagneticButton>
-
-          <MagneticButton onClick={onCTA}>
-            <button className="flex items-center gap-3 px-10 py-5 border border-white/20 text-white hover:border-[#C5A059] hover:text-[#C5A059] transition-all duration-500 rounded-full group">
-              <FiDownload size={16} className="group-hover:-translate-y-1 transition-transform duration-300" />
-              <span className="text-[11px] uppercase tracking-[0.25em] font-bold">
-                Download Brochure
-              </span>
             </button>
           </MagneticButton>
         </motion.div>

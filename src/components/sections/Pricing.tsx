@@ -26,11 +26,11 @@ const Pricing = ({ onCTA }: PricingProps) => {
         <motion.span variants={itemVariants} className="text-[#C5A059] uppercase tracking-[0.4em] text-[10px] mb-4 block font-bold">The Investment</motion.span>
         
         <motion.h2 variants={itemVariants} className="font-serif text-3xl md:text-5xl text-white mb-5 tracking-tight">
-          An Address That Reflects Its Worth.
+          An Address That Reflects Its Worth
         </motion.h2>
 
         <motion.p variants={itemVariants} className="max-w-xl mx-auto text-white/50 text-sm md:text-base font-light mb-10 leading-relaxed">
-          For those who understand that true value is measured beyond square feet.
+          For those who understand that true value is measured beyond square feet
         </motion.p>
 
         {/* Pricing Layout: "Starting From" placed beautifully before the number */}

@@ -1,8 +1,8 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { FiClock, FiMapPin, FiLayers, FiCheckCircle } from "react-icons/fi";
-import { IoDiamondOutline } from "react-icons/io5"; // Premium luxury asset icon
+import { FiClock, FiMapPin, FiLayers } from "react-icons/fi";
+import { IoDiamondOutline } from "react-icons/io5";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -23,11 +23,12 @@ const itemVariants: Variants = {
 
 const Specifications = () => {
   const connectivity = [
+    { destination: "Airport", time: "35 Mins", type: "Air Connectivity" },
+    { destination: "Railway Station", time: "25 Mins", type: "Rail Connectivity" },
+    { destination: "Koregaon Park", time: "20 Mins", type: "Lifestyle & Dining" },
     { destination: "Market Yard", time: "10 Mins", type: "Commercial Hub" },
     { destination: "Pune Camp", time: "12 Mins", type: "Business & Lifestyle" },
     { destination: "Swargate", time: "15 Mins", type: "Transit Terminal" },
-    { destination: "Katraj Zoo", time: "15 Mins", type: "Nature & Leisure" },
-    { destination: "Hadapsar Gadital", time: "18 Mins", type: "Industrial Corridor" },
     { destination: "Kothrud", time: "25 Mins", type: "Cultural Center" }
   ];
 
@@ -48,26 +49,19 @@ const Specifications = () => {
           
           {/* Left Column: Configuration & Core Blueprint Metrics */}
           <div className="lg:col-span-5 flex flex-col justify-center">
-            <motion.div variants={itemVariants} className="mb-3 inline-flex items-center gap-2">
-              <span className="w-8 h-px bg-[#C5A059]" />
-              <span className="text-[10px] uppercase tracking-[0.4em] text-[#C5A059] font-black">
-                Spatial Blueprint
-              </span>
-            </motion.div>
-
             <motion.h2 
               variants={itemVariants} 
               className="font-serif text-3xl md:text-5xl text-white tracking-tight mb-5 leading-tight"
             >
               The Luxury of <br />
-              Pure Proportion.
+              Pure Proportion
             </motion.h2>
 
             <motion.p 
               variants={itemVariants} 
               className="text-white/60 font-light text-sm md:text-base mb-8 leading-relaxed"
             >
-              An uncompromising footprint built for legacy. Every square inch is balanced intentionally to separate hosting spaces from absolute internal privacy.
+              An uncompromising footprint built for legacy. Every square inch is balanced intentionally to separate hosting spaces from absolute internal privacy
             </motion.p>
 
             {/* Core Spec Metric Grid Layout */}
@@ -113,26 +107,6 @@ const Specifications = () => {
                   </div>
                 </div>
               </motion.div>
-
-              {/* Ready Possession Highlight Feature Block */}
-              <motion.div 
-                variants={itemVariants}
-                className="sm:col-span-2 p-5 rounded-2xl bg-gradient-to-r from-[#C5A059]/10 via-[#C5A059]/5 to-transparent border border-[#C5A059]/30 relative overflow-hidden group shadow-[0_10px_30px_rgba(197,160,89,0.05)]"
-              >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#C5A059]/[0.02] rounded-full blur-xl group-hover:bg-[#C5A059]/[0.05] transition-all duration-700" />
-                <div className="flex items-start gap-4">
-                  <FiCheckCircle className="text-[#C5A059] shrink-0 mt-0.5" size={20} />
-                  <div>
-                    <div className="text-[#C5A059] text-[9px] uppercase tracking-[0.25em] font-black mb-1 flex items-center gap-2">
-                      Status Verified <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059] animate-ping" />
-                    </div>
-                    <h4 className="text-white text-base font-semibold tracking-wide mb-0.5">Ready Possession Available</h4>
-                    <p className="text-white/50 text-xs leading-relaxed max-w-sm">
-                      Skip execution delay risks. The structural geometry is complete and open for immediate walkthroughs and keys deployment.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
             </div>
           </div>
 
@@ -146,7 +120,6 @@ const Specifications = () => {
               <span className="text-white/30 text-[9px] uppercase tracking-widest font-mono">Radial Drive-Times</span>
             </motion.div>
 
-            {/* Seamless Grid-List Timeline Matrix for Destinations */}
             <div className="flex flex-col gap-2.5">
               {connectivity.map((item, index) => (
                 <motion.div
@@ -178,13 +151,35 @@ const Specifications = () => {
                 </motion.div>
               ))}
             </div>
-
-            {/* Micro Map-Marker Disclaimer Note */}
-            <motion.p variants={itemVariants} className="text-white/20 text-[10px] font-light mt-4 text-right italic">
-              *Drive metrics mapped via central arterials during standard conditions.
-            </motion.p>
           </div>
+        </div>
 
+        {/* Centered Ready Possession Block */}
+        <div className="flex justify-center w-full mt-16">
+          <motion.div 
+            variants={itemVariants} 
+            className="max-w-3xl w-full relative px-8 py-10 rounded-2xl border border-white/5 bg-gradient-to-b from-[#111] to-black shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden group"
+          >
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-linear-to-r from-transparent via-[#C5A059]/50 to-transparent" />
+            <div className="absolute top-0 right-0 w-40 h-40 bg-[#C5A059]/[0.03] rounded-full blur-2xl opacity-60 group-hover:opacity-100 transition-all duration-700" />
+            <span className="absolute -top-4 left-6 text-9xl font-serif text-white/[0.02] pointer-events-none select-none">“</span>
+            
+            <div className="relative z-10 text-center">
+              <div className="mb-4 flex justify-center">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#C5A059]/10 border border-[#C5A059]/30 rounded-full text-[9px] uppercase tracking-[0.25em] text-[#C5A059] font-black">
+                  <span className="w-1 h-1 rounded-full bg-[#C5A059] animate-pulse" />
+                  Ready Possession
+                </div>
+              </div>
+              <p className="text-white font-serif text-xl md:text-3xl tracking-wide leading-snug">
+                Skip execution delays <br className="hidden md:block"/>
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#C5A059] to-[#EAD09D] font-bold">
+                  Move in immediately
+                </span>
+              </p>
+              <div className="w-16 h-[2px] bg-linear-to-r from-transparent via-[#C5A059] to-transparent mx-auto mt-6" />
+            </div>
+          </motion.div>
         </div>
       </motion.div>
     </section>

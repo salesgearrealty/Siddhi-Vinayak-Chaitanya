@@ -77,8 +77,8 @@ const Gallery = () => {
     <section className="w-full py-16 md:py-24 bg-[#0A0A0A] overflow-hidden">
       <div className="container mx-auto px-6 mb-10 md:mb-16">
         <div className="max-w-2xl">
-          <h2 className="font-serif text-3xl md:text-5xl text-white mb-4 md:mb-6">A Glimpse Into Your Future.</h2>
-          <p className="text-white/50 font-light text-sm md:text-lg">Every detail designed to reflect Elegance, Class, and Peace.</p>
+          <h2 className="font-serif text-3xl md:text-5xl text-white mb-4 md:mb-6">A Glimpse Into Your Future</h2>
+          <p className="text-white/50 font-light text-sm md:text-lg">Every detail designed to reflect Elegance, Class, and Peace</p>
         </div>
       </div>
 

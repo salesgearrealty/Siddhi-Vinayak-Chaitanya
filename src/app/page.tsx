@@ -14,8 +14,14 @@ import Specifications from "@/components/sections/Specifications";
 
 export default function LandingPage() {
   const [isOpen, setIsOpen] = useState(false);
+  const [modalConfig, setModalConfig] = useState({ title: "", buttonText: "" });
 
-  const openModal = () => setIsOpen(true);
+  // Update the function to accept dynamic content
+  const openModal = (title: string, buttonText: string) => {
+    setModalConfig({ title, buttonText });
+    setIsOpen(true);
+  };
+
   const closeModal = () => setIsOpen(false);
 
   return (
@@ -23,47 +29,48 @@ export default function LandingPage() {
       {/* Global Luxury Enhancements */}
       <CursorGlow />
 
-      {/* Hero Section - The First Impression */}
+      {/* Hero Section */}
       <section id="hero">
-        <Hero onCTA={openModal} />
+        <Hero onCTA={() => openModal("Request Your Private Invitation", "Request Invitation")} />
       </section>
 
-      {/* Narrative & Positioning Sections */}
+      {/* Overview */}
       <section id="overview">
         <Exclusivity />
       </section>
 
       <Specifications />
 
-
       {/* Visual Experience */}
       <section id="gallery">
         <Gallery />
       </section>
 
-
-
-      {/* Logical & Convenience Proof */}
+      {/* Location */}
       <section id="location">
-        <Location onCTA={openModal} />
+        <Location onCTA={() => openModal("Inquire About Location", "Get Directions")} />
       </section>
 
-      {/* Value & Investment Anchoring */}
+      {/* Pricing */}
       <section id="pricing">
-        <Pricing onCTA={openModal} />
+        <Pricing onCTA={() => openModal("Request Detailed Pricing", "Get Pricing Details")} />
       </section>
 
-      {/* Scarcity & Conversion Push */}
-      <Urgency onCTA={openModal} />
+      {/* Scarcity */}
+      <Urgency onCTA={() => openModal("Secure Your Residence", "Book Now")} />
 
       <section id="contact">
-        <FinalCTA onCTA={openModal} />
+        <FinalCTA onCTA={() => openModal("Request Your Private Invitation", "Request Invitation")} />
       </section>
 
       {/* Global Lead Capture Overlay */}
-      <ModalForm isOpen={isOpen} onClose={closeModal} />
+      <ModalForm 
+        isOpen={isOpen} 
+        onClose={closeModal} 
+        title={modalConfig.title} 
+        buttonText={modalConfig.buttonText} 
+      />
       
-      {/* Background Noise/Texture for Luxury Feel */}
       <div className="fixed inset-0 pointer-events-none z-[1] opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
     </main>
   );
